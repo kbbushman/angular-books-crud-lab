@@ -13,8 +13,8 @@ function config(   $routeProvider,  $locationProvider   ) {
   $routeProvider
     .when('/', {
       templateUrl: '/views/templates/books-all.html',
-      controllerAs: 'BooksShowCtrl',
-      controller: 'BooksShowController'
+      controllerAs: 'BooksAllCtrl',
+      controller: 'BooksAllController'
     })
     .when('/books/:id', {
       templateUrl: '/views/templates/books-detail.html',
