@@ -5,16 +5,14 @@ angular
 BooksDetailController.$inject = ['$http', '$routeParams'];
 function BooksDetailController (  $http,   $routeParams  ) {
   var vm = this;
-  // console.log($routeParams);
-
   $http({
     method: 'GET',
-    url: 'https://super-crud.herokuapp.com/' // $routeParams.id
+    url: 'https://super-crud.herokuapp.com/books/' + $routeParams.id
   }).then(function successCallback(response) {
-    console.log(response.data.books);
-    vm.book = response.data.books;
+    console.log(response.data);
+    vm.book = response.data;
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
 
-}
+} // End BooksDetailController

@@ -5,8 +5,6 @@ angular
 BooksShowController.$inject = ['$http', '$routeParams'];
 function BooksShowController (  $http,   $routeParams  ) {
   var vm = this;
-  // console.log($routeParams);
-
   $http({
     method: 'GET',
     url: 'https://super-crud.herokuapp.com/books'
@@ -16,5 +14,4 @@ function BooksShowController (  $http,   $routeParams  ) {
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
-
 }

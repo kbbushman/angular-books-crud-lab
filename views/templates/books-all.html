@@ -6,7 +6,7 @@
 					<div class="float-fix">
 						<img src="{{ book.image }}" width="150" height="auto" class="align-left" />
 					</div>
-					{{ book.title }}<br />
+					<a ng-href="/books/{{ book._id }}">{{ book.title }}</a><br />
 					{{ book.author }}<br />
 					{{ book.releaseDate }}
 				</li>

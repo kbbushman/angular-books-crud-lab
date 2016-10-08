@@ -1,10 +1,8 @@
 <div class="container">
-	<h1>BOOK DETAIL</h1>
-		<div class="wrap">
-			<h1>Howdy Hey...!</h1>
-			{{ BooksDetailCtrl.book.image }}
-			{{ BooksDetailCtrl.book.title }}
-			{{ BooksDetailCtrl.book.author }}
-			{{ BooksDetailCtrl.book.releaseDate }}
+	<div class="wrap">
+		<h1>{{ BooksDetailCtrl.book.title }}</h1>
+			<img src="{{ BooksDetailCtrl.book.image }}" width="200" height="auto" /><br />
+			By: {{ BooksDetailCtrl.book.author }}<br />
+			Released: {{ BooksDetailCtrl.book.releaseDate }}
 		</div>
 </div>
