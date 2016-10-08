@@ -1,9 +1,14 @@
+/************************
+ BOOKS ALL CONTROLLER JS
+*************************/
+
 angular
   .module('angularBooks')
-  .controller('BooksShowController', BooksShowController);
+  .controller('BooksAllController', BooksAllController);
 
-BooksShowController.$inject = ['$http', '$routeParams'];
-function BooksShowController (  $http,   $routeParams  ) {
+// Get all books and send them to the books view
+BooksAllController.$inject = ['$http', '$routeParams'];
+function BooksAllController (  $http,   $routeParams  ) {
   var vm = this;
   $http({
     method: 'GET',
@@ -14,4 +19,5 @@ function BooksShowController (  $http,   $routeParams  ) {
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
-}
+
+}; // End BooksAllController

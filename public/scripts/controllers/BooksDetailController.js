@@ -1,7 +1,12 @@
+/***************************
+ BOOKS DETAIL CONTROLLER JS
+****************************/
+
 angular
   .module('angularBooks')
   .controller('BooksDetailController', BooksDetailController);
 
+// Get one book by id and send it to the books detail view
 BooksDetailController.$inject = ['$http', '$routeParams'];
 function BooksDetailController (  $http,   $routeParams  ) {
   var vm = this;
