@@ -13,14 +13,17 @@ function config(   $routeProvider,  $locationProvider   ) {
   $routeProvider
     .when('/', {
       templateUrl: '/views/templates/books-all.html',
-      controllerAs: 'BooksAllCtrl',
+      controllerAs: 'booksAllCtrl',
       controller: 'BooksAllController'
     })
     .when('/books/:id', {
       templateUrl: '/views/templates/books-detail.html',
-      controllerAs: 'BooksDetailCtrl',
+      controllerAs: 'booksDetailCtrl',
       controller: 'BooksDetailController'
     })
+    .otherwise({
+      redirectTo: '/'
+    });
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
