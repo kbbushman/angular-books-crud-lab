@@ -1,8 +1,27 @@
 <div class="container">
 	<div class="wrap">
-		<h1>{{ BooksDetailCtrl.book.title }}</h1>
-			<img src="{{ BooksDetailCtrl.book.image }}" width="200" height="auto" /><br />
-			By: {{ BooksDetailCtrl.book.author }}<br />
-			Released: {{ BooksDetailCtrl.book.releaseDate }}
-		</div>
+		<h1>{{ booksDetailCtrl.book.title }}</h1>
+			<img src="{{ booksDetailCtrl.book.image }}" width="200" height="auto" /><br />
+			Title: <span ng-hide="editing">{{ booksDetailCtrl.book.title }}</span>
+			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.title" class="form-control" placeholder="Title"><br />
+			Author: <span ng-hide="editing">{{ booksDetailCtrl.book.author }}</span>
+			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.author" class="form-control" placeholder="Author"><br />
+			Release Date: <span ng-hide="editing">{{ booksDetailCtrl.book.releaseDate }}</span>
+			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.releaseDate" class="form-control" placeholder="Release Date"><br />
+			<span ng-show="editing">Image:</span>
+			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.image" class="form-control" placeholder="Image"><br />
+	
+			<!-- Show Cancel button on Edit -->
+			<button type="button" class="cancel-button" ng-show="editing" ng-click="editing = false">Cancel</button>
+
+			<!-- Show Submit button on Edit -->
+      <input type="submit" value="Update Book" class="btn btn-default" ng-show="editing" ng-click="booksDetailCtrl.editBook(booksDetailCtrl.book); editing = false">
+
+			<!-- Edit Book info button -->
+			<button ng-hide="editing" ng-click="editing = true" class="btn btn-default">Edit Book Info</button>
+
+			<!-- Delete Book button -->
+			<button ng-hide="editing" ng-click="booksShowCtrl.deleteBook(booksShowCtrl.book)" class="btn btn-default">Delete Book</button>
+
+	</div>
 </div>
