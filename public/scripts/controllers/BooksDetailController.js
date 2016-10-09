@@ -20,6 +20,7 @@ function BooksDetailController (  $http,   $routeParams, $location  ) {
     console.log('There was an error getting the data', response);
   });
 
+  // Edit book info by id then redirect to books all view
   vm.editBook = function(bookToEdit) {
     console.log('updating book: ', bookToEdit);
     $http({
@@ -40,6 +41,22 @@ function BooksDetailController (  $http,   $routeParams, $location  ) {
     }
 
     function editBookError(response){
+      console.log('There was an error updating book id: ', $routeParams.id);
+    }
+  };
+
+  vm.deleteBook = function(book) {
+    console.log('deleting book: ', book.title);
+    $http({
+      method: 'DELETE',
+      url: 'https://super-crud.herokuapp.com/books/' + $routeParams.id,
+    }).then(deleteBookSuccess, deleteBookError);
+
+    function deleteBookSuccess(response){
+      console.log('book delete response data:', response.data);
+      $location.path('/');
+    }
+    function deleteBookError(response){
       console.log('There was an error updating book id: ', $routeParams.id);
     }
   };
