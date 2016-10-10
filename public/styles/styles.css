@@ -6,7 +6,6 @@
   Version: 1.0
 */
 
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
@@ -43,8 +42,6 @@ a:hover {
   width: 100%;
   overflow: hidden;
 }
-
-
 
 /* Typography
 --------------------------------------------- */
@@ -90,14 +87,31 @@ h4 {
   font-size: 20px;
 }
 
-h5 {
-  font-size: 18px;
+/* Header
+--------------------------------------------- */
+
+header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-h6 {
-  font-size: 16px;
+#header-container {
+  max-width: 1120px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
+#header-container h1 {
+  font-family: 'Black Ops One', cursive;
+  font-size: 38px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #000;
+  padding: 0;
+  margin: 40px 0 0;
+  text-align: left;
+}
 
 /* Layout
 --------------------------------------------- */
@@ -111,21 +125,92 @@ h6 {
 }
 
 .wrap {
-  background: #fff;
-  max-width: 800px;
+  background: transparent;
+  max-width: 1120px;
   padding: 40px 0 0;
   margin: 0 auto;
 }
 
-.all-books-ul {
-  list-style-type: none;
+#all-books-container {
+  background: #000;
+  width: 100%;
+  text-align: center;
+  word-spacing: 40px;
   padding: 0;
-  margin: 0 0 30px;
+  margin: 50px auto;
+  border-top: 10px solid #444;
+  border-bottom: 10px solid #444;
+  overflow: hidden;
 }
 
-.all-books-ul li {
+#all-books-list {
+  max-width: 1200px;
   padding: 0;
+  margin: 50px auto 20px;
+}
+
+.all-books-title {
+  word-spacing: 0;
+  text-align: left;
+  padding: 0;
+  margin-left: 50px;
+  color: #fff;
+}
+
+.book-ngrepeat {
+  width: 1200px; 
+}
+
+.book-card-outer {
+  word-spacing: 0;
+  display: inline-block;
+  padding: 0;
+  margin: 0 20px 40px; 
+  vertical-align: top;
+  border: 1px solid #e5e5e5;
+}
+
+.book-card-inner {
+  background: #fff;
+  width: 240px;
+  height: 360px;
+  padding: 20px 0;
   margin: 0;
+  border: 1px solid #dddddd;
+}
+
+.book-image {
+  width: 150px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.book-info {
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.book-title {
+  display: block;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.book-author {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  padding: 0;
+}
+
+.book-date {
+  display: block;
+  padding: 0;
+  text-align: center;
 }
 
 /* Media Queries
@@ -138,7 +223,6 @@ h6 {
   }
 
 }
-
 
 @media only screen and (max-width: 480px) {
 
