@@ -13,20 +13,27 @@
 		<!-- Vendor Scripts -->
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
-<!-- 		<script src="/bower_components/angular/angular.js"></script>
-		<script src="/bower_components/angular-route/angular.js"></script> -->
 
 		<!-- Application Scripts-->
 		<script src="/public/scripts/app.js"></script>
 		<script src="/public/scripts/controllers/BooksAllController.js"></script>
 		<script src="/public/scripts/controllers/BooksDetailController.js"></script>
 
+    <!-- GOOGLE FONTS -->
+     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	</head>
 	<!-- End Head -->
 
 	<!-- Start Body -->
 	<body>
+
+	  <header>
+      <div id="header-container">
+        <h1>WDI-32 Library</h1>
+      </div>
+    </header>
 
 		<div ng-view></div>
 
