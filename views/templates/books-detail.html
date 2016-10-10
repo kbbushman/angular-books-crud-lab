@@ -1,27 +1,35 @@
-<div class="container">
-	<div class="wrap">
-		<h1>{{ booksDetailCtrl.book.title }}</h1>
-			<img src="{{ booksDetailCtrl.book.image }}" width="200" height="auto" /><br />
-			Title: <span ng-hide="editing">{{ booksDetailCtrl.book.title }}</span>
-			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.title" class="form-control" placeholder="Title"><br />
-			Author: <span ng-hide="editing">{{ booksDetailCtrl.book.author }}</span>
-			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.author" class="form-control" placeholder="Author"><br />
-			Release Date: <span ng-hide="editing">{{ booksDetailCtrl.book.releaseDate }}</span>
-			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.releaseDate" class="form-control" placeholder="Release Date"><br />
-			<span ng-show="editing">Image:</span>
-			<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.image" class="form-control" placeholder="Image"><br />
-	
-			<!-- Show Cancel button on Edit -->
-			<button type="button" class="cancel-button" ng-show="editing" ng-click="editing = false">Cancel</button>
+<div id="single-book-container">
+	<div id="single-book-list">
+		<h1 class="single-book-title">{{ booksDetailCtrl.book.title }}</h1>
+		<div id="single-book">
+			<div class="single-book-image">
+				<img src="{{ booksDetailCtrl.book.image }}" alt="Image Thumbnail" width="100%" height="auto" />
+			</div>
+			<div class="single-book-info">
+				<p class="detail-title">Title: <span ng-hide="editing">{{ booksDetailCtrl.book.title }}</span>
+				<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.title" class="form-control" placeholder="Title" /></p>
+				<p class="detail-author">Author: <span ng-hide="editing">{{ booksDetailCtrl.book.author }}</span>
+				<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.author" class="form-control" placeholder="Author" /></p>
+				<p class="detail-date">Release Date: <span ng-hide="editing">{{ booksDetailCtrl.book.releaseDate }}</span>
+				<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.releaseDate" class="form-control" placeholder="Release Date" /></p>
+				<span ng-show="editing">Image:</span>
+				<input type="text" ng-show="editing" ng-model="booksDetailCtrl.book.image" class="form-control" placeholder="Image" />
 
-			<!-- Show Submit button on Edit -->
-      <input type="submit" value="Update Book" class="btn btn-default" ng-show="editing" ng-click="booksDetailCtrl.editBook(booksDetailCtrl.book); editing = false">
+				<a href="/" ng-hide="editing" class="back-button">Back</a>
 
-			<!-- Edit Book info button -->
-			<button ng-hide="editing" ng-click="editing = true" class="btn btn-default">Edit Book Info</button>
+				<!-- Show Submit button on Edit -->
+		    <input type="submit" value="Update Book" class="edit-book-submit" ng-show="editing" ng-click="booksDetailCtrl.editBook(booksDetailCtrl.book); editing = false" />
 
-			<!-- Delete Book button -->
-			<button ng-hide="editing" ng-click="booksDetailCtrl.deleteBook(booksDetailCtrl.book)" class="btn btn-default">Delete Book</button>
+				<!-- Show Cancel button on Edit -->
+				<button type="button" class="cancel-button" ng-show="editing" ng-click="editing = false">Cancel</button>
+			</div>
+		</div>
+
+		<!-- Delete Book button -->
+		<button ng-hide="editing" ng-click="booksDetailCtrl.deleteBook(booksDetailCtrl.book)" class="delete-book">Delete Book</button>
+
+		<!-- Edit Book info button -->
+		<button ng-hide="editing" ng-click="editing = true" class="edit-book-info">Edit Book Info</button>
 
 	</div>
 </div>
